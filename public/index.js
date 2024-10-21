@@ -4,7 +4,7 @@ app.use(require('body-parser').json());
 app.use(require('express').static('public'));
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + 'index.html');
+  res.sendFile(__dirname + '/public/index.html');
 });
 
 app.post('/new-data', (req, res) => {
