@@ -1,10 +1,12 @@
-app = require('express')();
+var express = require('express');
+var path = require('path');
+var app = express();
 
 app.use(require('body-parser').json());
-app.use(require('express').static('public'));
+app.use(express.static(__dirname));
 
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/public/index.html');
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.post('/new-data', (req, res) => {
